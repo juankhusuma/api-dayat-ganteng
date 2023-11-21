@@ -189,5 +189,8 @@ export default async function handler(
         questions.push(question);
     }
 
-    res.status(200).json(questions);
+    res.status(200)
+        .setHeader("Content-Type", "application/json")
+        .setHeader("Access-Control-Allow-Origin", "*")
+        .json(questions);
 }
